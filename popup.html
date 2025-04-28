@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timezone & Location Spoofer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 200px;
+      padding: 10px;
+    }
+    input, button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h3>Настройки</h3>
+
+  <label>Часовой пояс (например, Europe/Moscow):</label><br>
+  <input type="text" id="timezone"><br>
+
+  <label>Широта:</label><br>
+  <input type="number" id="latitude" step="0.0001"><br>
+
+  <label>Долгота:</label><br>
+  <input type="number" id="longitude" step="0.0001"><br>
+
+  <label>Locale (например, en-US):</label><br>
+  <input type="text" id="locale"><br>
+
+  <label>User Agent:</label><br>
+  <input type="text" id="userAgent"><br>
+
+  <button id="save">Сохранить</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
