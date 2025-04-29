@@ -26,6 +26,7 @@ function saveOptions() {
 function restoreOptions() {
   chrome.storage.local.get(['config'], (result) => {
     if (result.config) {
+      document.getElementById('sites').value = result.config.sites.join(', ');
       document.getElementById('timezone').value = result.config.timezone || '';
       document.getElementById('latitude').value = result.config.latitude || '';
       document.getElementById('longitude').value = result.config.longitude || '';
