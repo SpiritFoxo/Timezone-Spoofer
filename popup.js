@@ -2,21 +2,23 @@ document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
 
 function saveOptions() {
+  const sites = document.getElementById('sites').value.split(',').map(s => s.trim());
   const timezone = document.getElementById('timezone').value.trim();
   const latitude = parseFloat(document.getElementById('latitude').value);
   const longitude = parseFloat(document.getElementById('longitude').value);
   const locale = document.getElementById('locale').value.trim();
   const userAgent = document.getElementById('userAgent').value.trim();
 
-  chrome.storage.local.set({
-    config: {
-      timezone,
-      latitude,
-      longitude,
-      locale,
-      userAgent
-    }
-  }, () => {
+  const settings = {
+    sites,
+    timezone,
+    locale,
+    latitude,
+    longitude,
+    userAgent
+  };
+
+  chrome.storage.local.set({ config: settings }, () => {
     alert('Настройки сохранены!');
   });
 }

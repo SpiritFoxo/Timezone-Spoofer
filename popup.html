@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Timezone & Location Spoofer</title>
@@ -18,7 +18,10 @@
 <body>
   <h3>Настройки</h3>
 
-  <label>Часовой пояс (например, Europe/Moscow):</label><br>
+  <label>Сайты (через запятую):</label><br>
+  <input type="text" id="sites" style="width: 100%;"><br><br>
+
+  <label>Часовой пояс:</label><br>
   <input type="text" id="timezone"><br>
 
   <label>Широта:</label><br>
@@ -27,7 +30,7 @@
   <label>Долгота:</label><br>
   <input type="number" id="longitude" step="0.0001"><br>
 
-  <label>Locale (например, en-US):</label><br>
+  <label>Locale:</label><br>
   <input type="text" id="locale"><br>
 
   <label>User Agent:</label><br>
