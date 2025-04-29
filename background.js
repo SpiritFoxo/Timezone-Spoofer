@@ -34,6 +34,19 @@ chrome.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
           accuracy: 10,
         });
       }
+
+      if (config.locale) {
+        await sendCommand(tabId, "Emulation.setLocaleOverride", {
+          locale: config.locale,
+        });
+      }
+
+      if (config.userAgent) {
+        await sendCommand(tabId, "Emulation.setUserAgentOverride", {
+          userAgent: config.userAgent || navigator.userAgent,
+          platform: "Win32",
+        });
+      }
       
     } catch (e) {
       console.error("Send command failed", e);
