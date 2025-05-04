@@ -11,14 +11,23 @@ chrome.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
       console.log("No config found");
       return;
     }
+
+    if (!config.enabled) {
+      console.log("Extension is disabled");
+      return;
+    }
     
     try {
       await chrome.debugger.attach({ tabId: tabId }, "1.3");
       console.log('Debugger attached to tab', tabId);
     } catch (e) {
+       if (e.message.includes("Already attached")) {
+      console.log("Debugger already attached");
+    } else {
       console.error("Attach failed", e);
       return;
     }
+  }
   
     try {
       if (config.timezone) {
