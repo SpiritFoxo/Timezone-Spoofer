@@ -1,11 +1,11 @@
 # 🌍 TIMEZONE SPOOFER
 Timezone Spoofer is a lightweight but powerful extension for Chromium-based browsers that allows you to spoof browser environment parameters for specific websites:
 
-- 🕒 Timezone (timezone)
+- 🕒 Timezone
 
-- 🌐 Locale (locale)
+- 🌐 Locale
 
-- 🧭 Geolocation (latitude and longitude)
+- 🧭 Geolocation
 
 - 🧑💻 User-Agent and platform
 
